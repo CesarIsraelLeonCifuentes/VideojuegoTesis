@@ -13,11 +13,14 @@ public class soundManager : MonoBehaviour
     
     public AudioClip sound3;
 
+    string soundPath;
+
     void Start()
     {
         //Fetch the AudioSource from the GameObject
         m_MyAudioSource = GetComponent<AudioSource>();
-        //Ensure the toggle is set to true for the music to play at start-up
+        //Path de sonido
+        soundPath = "file://" + Application.streamingAssetsPath + "/Sounds/";
     }
 
     // Update is called once per frame
