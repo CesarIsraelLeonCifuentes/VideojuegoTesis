@@ -319,11 +319,17 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/VSSettingsProvider.ref.dll"
+"Assets/Gesto.cs"
 "Assets/Scripts/cameraFollowScript.cs"
 "Assets/Scripts/controladorBaile.cs"
+"Assets/Scripts/gesto.cs"
 "Assets/Scripts/luz.cs"
+"Assets/Scripts/menu.cs"
+"Assets/Scripts/MenuCarrusel.cs"
+"Assets/Scripts/menuConfiguracion.cs"
 "Assets/Scripts/pisoMovimiento.cs"
-"Assets/Scripts/posicionJugador.cs"
+"Assets/Scripts/readSocket.cs"
+"Assets/Scripts/SceneLoadManager.cs"
 "Assets/Scripts/soundManager.cs"
 -langversion:8.0
 

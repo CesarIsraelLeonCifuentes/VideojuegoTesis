@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class soundManager : MonoBehaviour
@@ -13,14 +14,10 @@ public class soundManager : MonoBehaviour
     
     public AudioClip sound3;
 
-    string soundPath;
-
     void Start()
     {
         //Fetch the AudioSource from the GameObject
-        m_MyAudioSource = GetComponent<AudioSource>();
-        //Path de sonido
-        soundPath = "file://" + Application.streamingAssetsPath + "/Sounds/";
+
     }
 
     // Update is called once per frame
@@ -30,16 +27,20 @@ public class soundManager : MonoBehaviour
         {
             m_MyAudioSource.clip = sound1;
             m_MyAudioSource.Play();
-        }
-        if(Input.GetKey("down"))
+            //nombreCancion.text = "Canción 1";
+        }else if(Input.GetKey("down"))
         {
             m_MyAudioSource.clip = sound2;
             m_MyAudioSource.Play();
-        }
-        if(Input.GetKey("left"))
+            //nombreCancion.text = "Canción 2";
+        }else if(Input.GetKey("left"))
         {
             m_MyAudioSource.clip = sound3;
             m_MyAudioSource.Play();
+            //nombreCancion.text = "Canción 3";
+        }else if(Input.GetKey("right")){
+             m_MyAudioSource.Stop();
         }
     }
+
 }

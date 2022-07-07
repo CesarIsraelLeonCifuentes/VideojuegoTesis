@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class luz : MonoBehaviour
 {
-    //Objeto a enfocar
-    public Transform targetPiso;
     //Luz
     Light luzAmbiental;
     void Start()
@@ -17,7 +15,6 @@ public class luz : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        //luzAmbiental.LookAt(targetPiso);
         
     }
 

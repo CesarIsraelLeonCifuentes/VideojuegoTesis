@@ -1,0 +1,36 @@
+{
+	"gesto":[
+		{
+			"nombre": "Left",
+			"tiempo": 6.000
+		},
+		{
+			"nombre": "Right",
+			"tiempo": 6.000
+		},
+		{
+			"nombre": "Up",
+			"tiempo": 6.000
+		},
+		{
+			"nombre": "Down",
+			"tiempo": 17.000
+		},
+		{
+			"nombre": "Open",
+			"tiempo": 17.000
+		},
+		{
+			"nombre": "Pinch",
+			"tiempo": 4.000
+		},
+		{
+			"nombre": "WaveIn",
+			"tiempo": 3.000
+		},
+		{
+			"nombre": "WaveOut",
+			"tiempo": 3.000
+		}
+	]
+}
