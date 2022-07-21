@@ -33,6 +33,44 @@ public class readSocket : MonoBehaviour {
               StreamReader reader = new StreamReader (ns);
               msg = reader.ReadToEnd();
               print (msg);
+              switch(msg){
+                case "1":
+                  msg = "WaveIn";
+                  break;
+                case "2":
+                  msg = "WaveOut";
+                  break;
+                case "3":
+                  msg = "Fist";
+                  break;
+                case "4":
+                  msg = "Open";
+                  break;
+                case "5":
+                  msg = "Pinch";
+                  break;
+                case "6":
+                  msg = "Up";
+                  break;
+                case "7":
+                  msg = "Down";
+                  break;
+                case "8":
+                  msg = "Left";
+                  break;
+                case "9":
+                  msg = "Right";
+                  break;
+                case "10":
+                  msg = "Forward";
+                  break;
+                case "11":
+                  msg = "Backward";
+                  break;
+                case "0":
+                  msg = "NoGesto";
+                  break;
+              }
               return msg;
           }
       }

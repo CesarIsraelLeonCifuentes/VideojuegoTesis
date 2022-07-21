@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class menuConfiguracion : MonoBehaviour
 {
@@ -13,7 +14,7 @@ public class menuConfiguracion : MonoBehaviour
     //botones
     public Text valorVolumen;
     //Volumen
-    float musicVolumen = 0.1f;
+    float musicVolumen;
     //Slider
     public Slider volumenSlider;
     //gestor de la escena
@@ -28,26 +29,32 @@ public class menuConfiguracion : MonoBehaviour
         musicVolumen = PlayerPrefs.GetFloat("volume");
         AudioSource.volume = musicVolumen;
         volumenSlider.value = musicVolumen;
+        valorVolumen.text = ((int) (musicVolumen*100.0f)).ToString()+"%";
         btnvolver.onClick.AddListener(IrMenuPrincipal);
-        socket.Start();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        gesto = socket.Update();
-        if(gesto == "Up" && musicVolumen <1.0f){
-            volumenSlider.value = volumenSlider.value+0.1f;
-        }else if (gesto == "Down" && musicVolumen >0.0f){
-            if(volumenSlider.value > 0.9f){
-                volumenSlider.value = 0.90f;
-            }else{
-                volumenSlider.value = volumenSlider.value-0.1f;
-            }  
-        }else if(gesto == "Pinch"){
-            IrMenuPrincipal();
+        try{
+            gesto = socket.Update();
+            if(gesto == "Up" && musicVolumen <1.0f){
+                volumenSlider.value = volumenSlider.value+0.1f;
+            }else if (gesto == "Down" && musicVolumen >0.0f){
+                if(volumenSlider.value > 0.9f){
+                    volumenSlider.value = 0.90f;
+                }else{
+                    volumenSlider.value = volumenSlider.value-0.1f;
+                }  
+            }else if(gesto == "Pinch"){
+                IrMenuPrincipal();
+            }
+        }catch (Exception ex)
+        {
+            socket.Start();
         }
-
+        
         musicVolumen = volumenSlider.value;
         AudioSource.volume = volumenSlider.value;
         PlayerPrefs.SetFloat("volume", volumenSlider.value);
